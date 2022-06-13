@@ -112,15 +112,12 @@ def leave(chicken):
 ## Add chicken to the list 
 def add_to_list(id):
     f_chicken_list = open(chicken_list, "a+")
-    chickenwriter = csv.writer(f_chicken_list)
-    chickenwriter.writerow([id])
+    f_chicken_list.write(id)
     f_chicken_list.close()
     return
 
 ## Check all chicken's status in register and return false if at least one is still out
 def check_chicken_before_closing():
-    ## TODO fix
-    print("is there enough chicken bro?")
     #read all ids of chickens
     f_chicken_list = open(chicken_list, "r")
     chicken_lines = f_chicken_list.readlines() 
